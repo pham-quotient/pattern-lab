@@ -1,0 +1,37 @@
+$space : $line-height-base ;
+$space-and-half : $space*1.5;
+$space-double : $space*2;
+$space-quad : $space*4;
+$space-half : $space/2;
+$space-quater: $space/4;
+$pad : 1em;
+$pad-and-half : $pad*1.5;
+$pad-double : $pad*2;
+$pad-half : $pad/2;
+$pad-quarter :$pad/4;
+
+
+// Breakpoint Settings
+$bp-small               : 24em;
+$bp-med                 : 42em;
+$bp-large               : 53em;
+$bp-mega                : 92em;
+
+$tab                    : 'screen' $bp-med;
+$desk                   : 'screen' $bp-large;
+$wide                   : 'screen' $bp-mega;
+
+$max-width              : 1200px;
+
+$columns                        : 12;
+$col-width                      :percentage(1/$columns);
+$col-half-width                 :percentage(1/($columns*2));
+
+//grid settings
+$susy: (
+        columns:            $columns,
+        container:          96%,
+        global-box-sizing:  border-box,
+        gutters:            1/2,
+  //  debug:              (image:show),
+);

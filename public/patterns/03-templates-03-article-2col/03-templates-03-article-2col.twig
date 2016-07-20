@@ -1,0 +1,17 @@
+{% extends &quot;templates-page-2col&quot; %}
+{% block main %}
+    &lt;article class=&quot;article&quot;&gt;
+        &lt;header class=&quot;article-header&quot;&gt;
+            &lt;h1&gt;Article Headline Lorem ipsum dolor sit aweofij&lt;/h1&gt;
+            {% include &quot;molecules-byline&quot; %}
+        &lt;/header&gt;
+        {% include &quot;organisms-article-body&quot; %}
+    &lt;/article&gt;&lt;!--end .article--&gt;
+    {% include &quot;molecules-social-share&quot; %}
+    {% include &quot;organisms-comment-thread&quot; %}
+{% endblock %}
+
+{% block sidebar %}
+    {% include &quot;organisms-related-posts&quot; %}
+    {% include &quot;organisms-recent-tweets&quot; %}
+{% endblock %}

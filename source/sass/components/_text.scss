@@ -1,0 +1,62 @@
+//Intro text
+.intro {
+	@extend h4;
+	font-family: $font;
+}
+
+//Pullquote
+.pullquote {
+	font-family: $font-secondary;
+	font-size: $font-size-h5;
+}
+
+//Caption 
+.caption {
+	font-style: italic;
+}
+
+//Passages of text
+.text {
+	a {
+		text-decoration: underline;
+	}
+
+	ul {
+		list-style: disc;
+		margin: 0 0 $space 1.2em;
+
+		ul {
+			margin-bottom: 0;
+		}
+	}
+
+	ol {
+		list-style: decimal;
+		margin: 0 0 $space 1.5em;
+
+		ol {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.giga {
+	font-size: em($font-size-giga);
+	line-height: $line-height-giga;
+}
+
+.mega {
+	font-size: em($font-size-mega);
+	line-height: $line-height-mega;
+}
+
+.small {
+	font-size: em($font-size-small);
+	line-height: $line-height-small;
+}
+
+/* Subheadings */
+.subheading {
+	font-family: $font-secondary;
+	font-weight: normal;
+}

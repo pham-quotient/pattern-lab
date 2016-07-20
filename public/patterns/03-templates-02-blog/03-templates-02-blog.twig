@@ -1,0 +1,11 @@
+{% extends &quot;templates-site&quot; %}
+{% block title %}&lt;h1 class=&quot;section-title&quot;&gt;Our Outdoor Blog&lt;/h1&gt;{% endblock %}
+
+{% block main %}
+    {% include &quot;organisms-latest-posts&quot; %}
+    {% include &quot;molecules-pagination&quot; %}
+{% endblock %}
+
+{% block sidebar %}
+    {% include &quot;organisms-recent-tweets&quot; %}
+{% endblock %}

@@ -1,0 +1,144 @@
+// creates a button style
+//@mixin button($color: white, $background: $blue, $border) {
+@mixin button() {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin-bottom: 0; // For input.btn
+  font-weight: $btn-font-weight;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid transparent;
+  white-space: nowrap;
+  // @if $shadow {
+  //   @include box-shadow(rgba(white, 0.1) 0 1px 0 inset, rgba(white, .075) 0 1px 0);
+  //   @include text-shadow(rgba(black, .25) 0 -1px 0);
+  // }
+}
+
+@mixin button-style($color, $background, $border: false, $gradient: false, $hover: false){
+  color: $color;
+  background-color: $background;
+  @if $gradient {
+    @include background-image(linear-gradient(lighten($background, 5), darken($background, 5)));  // top, bottom color
+  }
+  @if $border {
+    border-color: $border;
+    *border: 0;
+  //  border-bottom-color: darken($border, 10%);
+    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.15);
+  }
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+      @include tab-focus;
+    }
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+  }
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $color;
+    text-decoration: none;
+    @if $hover {
+      background-color: $hover;
+    }
+    @else {
+      background-color: darken($background, 20);
+    }
+
+    @if $border {
+      border-color: darken($border, 25);
+    }
+    @if $gradient {
+      @include background-image(linear-gradient(darken($background, 20), darken($background, 10)));  // top, bottom color
+    }
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: $background;
+          border-color: $border;
+      pointer-events: none; // Future-proof disabling of clicks
+      @include opacity(.65);
+      @include box-shadow(none);
+    }
+  }
+
+  .badge {
+    color: $background;
+    background-color: $color;
+  }
+
+
+
+}
+
+// Button sizes
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius: 0) {
+  padding: em($padding-vertical) em($padding-horizontal);
+  font-size: em($font-size);
+  line-height: $line-height;
+  @if $border-radius > 0 {
+    @include border-radius($border-radius);
+  }
+  @else {
+    border-radius: 0;
+  }
+}
+
+// Button Image
+@mixin button-image($width, $height, $icon-url, $bg: false) {
+  width: $width;
+  height: $height;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: {
+    image: image-url($icon-url);
+    repeat: no-repeat;
+    position:  50% 50%;
+    size: contain;
+  }
+  @if $bg {
+    background-color: $bg;
+  }
+  @else {
+    background-color: transparent;
+  }
+  text-indent: -1000em;
+  cursor: pointer; /* hand-shaped cursor */
+  cursor: hand; /* for IE 5.x */
+  @include opacity(.8);
+  &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      @include opacity(1);
+    }
+}

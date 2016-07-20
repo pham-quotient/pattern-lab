@@ -1,0 +1,12 @@
+&lt;section class=&quot;comments section&quot;&gt;
+	&lt;div class=&quot;comments-container&quot; id=&quot;comments-container&quot;&gt;
+		&lt;h2 class=&quot;section-title&quot;&gt;59 Comments&lt;/h2&gt;
+		{% include &quot;molecules-comment-form&quot; %} 
+		&lt;ul class=&quot;comment-list&quot;&gt;
+			{% for item in 1..5 %}
+				{% include &quot;molecules-single-comment&quot; %} 
+			{% endfor %}
+		&lt;/ul&gt;
+	&lt;/div&gt;
+	{% include &quot;molecules-pagination&quot; %} 
+&lt;/section&gt;

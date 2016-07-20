@@ -1,0 +1,39 @@
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+.btn {
+		@include button;
+		// ($color, $background, $border, $gradient, $hover
+		@include button_style(white, $gray-alt, false, false, $blue);
+		@include button_size($space-quater, $space-quater, $font-size-small, $line-height-small);
+		text-transform: uppercase;
+		font-weight: bold;
+		letter-spacing: .1px;
+		@include link-colors(white, white, white, white, white);
+		&.blue {
+			@include button_style(white, $blue, false, false, $gray-alt);
+			@include link-colors(white, white, white, white, white);
+		}
+		&.alt {
+			@include button_style($text-color, $gray-lighter, false, false, $gray-light);
+			@include link-colors($text-color, white, white, $text-color, $text-color);
+		}
+
+}
+
+.btn-small {
+	padding: $pad-half;
+}
+
+.btn-large {
+	padding: $pad-half;
+	text-transform: uppercase;
+	background: $gray;
+	font-size: 1.4rem;
+	font-weight: normal;
+}
+
+
+.text-btn {
+	font-style: italic;
+}

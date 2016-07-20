@@ -1,0 +1,26 @@
+<div class="flexslider-container horizontal">
+    <div id="flexslider-1" class="flexslider ">
+        <ul class="slides">
+            {% for slide in slider %}
+                <li>
+                    <a href="{{ url }}">
+                        <img src="{{ slide.src }}" alt="slide image">
+
+                        <div class="caption">
+
+
+                            <h3 class="slide-title">{{ slide.title }}       </h3>
+                            <p>{{ slide.caption }}</p>
+
+
+                        </div>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="flex-control-nav-container">
+
+    </div>
+</div>

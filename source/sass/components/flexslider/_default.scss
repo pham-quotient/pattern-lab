@@ -1,0 +1,315 @@
+/* ====================================================================================================================
+ * DEFAULT THEME
+ * ====================================================================================================================*/
+
+.flexslider-container,
+.flexslider {
+  ul {
+    @extend %reset-list;
+  }
+  @include clearfix;
+  position: relative;
+
+}
+.flexslider-container {
+  margin-bottom: em($space-double);
+  .entity-paragraphs-item & {
+    margin: em($space-and-half) 0 em($space-double);
+    border: 1px solid $gray-lightest;
+    border-width: 1px 0;
+   padding: em($space-and-half) 0;
+  }
+}
+.flexslider {
+  padding: 0;
+  margin: 0 auto;
+  background: white;
+  border: none;
+  position: relative;
+  zoom: 1;
+  .slides {
+    zoom: 1;
+    margin: 0;
+    padding: 0;
+    img {
+      height: auto;
+      width: 100%;
+      display: block;
+    }
+    @include clearfix;
+    .no-js &{
+
+      > li{
+        &:first-child{
+          display: block;
+
+        }
+      }
+    }
+  }
+}
+
+.flex-viewport {
+  max-height: 2000px;
+  @include transition(all 1s ease);
+
+  .loading &{
+    max-height: 300px;
+  }
+}
+
+
+//
+// Direction Nav
+//
+
+.flex-direction-nav {
+  *height: 0;
+  // Global styles
+   a  {
+    text-decoration: none;
+    display: block;
+    position: absolute;
+    z-index: 10;
+    margin: 0;
+    top: 35%;
+     width: em(30px);
+     height: em(30px);
+    @include opacity(.5);
+    overflow: hidden;
+    background: {
+          image: image-url("prev.svg");
+          repeat: no-repeat;
+          size: contain;
+    }
+    cursor: pointer;
+    @include transition(all 0.3s ease-in-out);
+
+
+   }
+
+  // Prev
+  .flex-prev {
+    left: 1%;
+  }
+
+  // Next
+  .flex-next {
+    right: 1%;
+    text-align: right;
+    background: {
+      image: image-url("next.svg");
+    }
+  }
+  .flexslider-container.vertical & {
+    a,
+    .flex-next {
+      width: 8%;
+      background-position: 50% 82%;
+      z-index: 1000;
+    }
+    .flex-prev  {
+      left: 5px;
+    }
+    .flex-next {
+      right: 5px;
+    }
+  }
+  @include breakpoint($tab) {
+    a {
+      width: em(50px);
+      height: em(50px);
+    }
+    .flexslider-container.vertical & {
+      a,
+      .flex-next {
+        width: em(50px);
+      }
+      .flex-prev {
+        left: 10px;
+      }
+      .flex-next {
+        right: 10px;
+      }
+    }
+  }
+  @include breakpoint($wide) {
+    //.flexslider-container.horizontal & {
+    a {
+      width: em(60px);
+      height: em(60px);
+      top: 45%;
+      .edan-object-wrapper & {
+        top: 48%;
+      }
+    }
+
+    // }
+  }
+  // Hover states
+  .flex-prev {
+    &:hover{
+      opacity: 1;
+    }
+  }
+  .flex-next {
+    &:hover{
+      opacity: 1;
+    }
+  }
+
+
+  //
+  // Disabled
+  //
+  .flex-disabled {
+    opacity: 0!important;
+    filter: alpha(opacity=0);
+    cursor: default;
+  }
+}
+
+.flex-pauseplay,
+.flex-direction-nav {
+  a span {
+    @extend %hide-text;
+  }
+}
+
+  //
+// Pause/Play
+//
+
+.flex-pauseplay a {
+
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: em(20px);
+  right: 10%;
+  opacity: 0.8;
+  z-index: 10;
+  overflow: hidden;
+  cursor: pointer;
+  color: #000;
+
+  &:before {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    font-size: 20px;
+    color: #FFF;
+    padding-right: 0.5em;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    display: inline-block;
+    content: "\f04c";
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  .flex-play:before {
+    content: "\f04b";
+  }
+
+}
+
+
+//
+// Control Nav
+//
+
+.flex-control-nav {
+
+  width: 100%;
+  position: absolute;
+  bottom: -40px;
+  text-align: center;
+
+  li {
+
+    margin: 0 6px;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+
+  }
+
+}
+
+
+//
+// Control paging
+//
+
+.flex-control-paging li {
+
+  a {
+
+    width: 11px;
+    height: 11px;
+    display: block;
+    background: #666;
+    background: rgba(0,0,0,0.5);
+    cursor: pointer;
+    text-indent: -9999px;
+
+    @include box-shadow(rgba(0,0,0,0.3) 0, 0, 3px, inset );
+    @include border-radius( 20px );
+
+    &:hover {
+
+      background: #333;
+      background: rgba(0,0,0,0.7);
+
+    }
+
+    &.flex-active {
+
+      background: #000;
+      background: rgba( 0, 0, 0, 0.9 );
+      cursor: default;
+
+    }
+  }
+}
+
+.flex-control-thumbs {
+
+  margin: 5px 0 0;
+  position: static;
+  overflow: hidden;
+
+  li {
+
+    width: 25%;
+    float: left;
+    margin: 0;
+
+  }
+
+  img {
+
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: .7;
+    cursor: pointer;
+    @include transition(all 1s ease);
+
+    &:hover {opacity: 1;}
+
+  }
+
+  .flex-active {
+
+    opacity: 1;
+    cursor: default;
+
+  }
+}

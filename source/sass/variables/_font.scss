@@ -1,0 +1,31 @@
+// Font Settings
+$font                    : 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-secondary          : 'Libre Baskerville', Georgia, Times, "Times New Roman", serif;
+$baseFontSize            : 10;
+$font-size-base          : 16px;
+
+$font-size-h1            : ceil($font-size-base * 2.375); // 38px
+$font-size-h2            : ceil($font-size-base * 1.75); // 28px
+$font-size-h3            : ceil($font-size-base * 1.3125); // 21px
+$font-size-h4            : ceil($font-size-base * 1.25); // 20px
+$font-size-h5            : $font-size-base * 1.125; // 18x
+$font-size-h6            : $font-size-base; // 16x
+
+$font-size-small         : $font-size-base * .8125; // 13px
+$font-size-giga          : $font-size-base * 4.25; // 68px
+$font-size-mega          : $font-size-base * 2.625; // 42px
+
+
+$baseLineHeight          : 1.5;
+$line-height-base        : round($font-size-base * $baseLineHeight);  //24px
+
+$line-height-h1          : $line-height-base*2/$font-size-h1;
+$line-height-h2          : $line-height-base*2/$font-size-h2;
+$line-height-h3          : $line-height-base/$font-size-h3;
+$line-height-h4          : $line-height-base/$font-size-h4;
+$line-height-h5          : $line-height-base/$font-size-h5;
+$line-height-h6          : $line-height-base/$font-size-h5;
+
+$line-height-small       : $line-height-base/$font-size-small ;
+$line-height-giga        : $line-height-base*3/$font-size-giga;
+$line-height-mega        : $line-height-base*2/$font-size-mega;

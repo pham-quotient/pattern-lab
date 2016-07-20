@@ -1,0 +1,52 @@
+// Legacy support.
+$legacy-support-for-ie6 : false;
+$legacy-support-for-ie7 : true;
+$legacy-support-for-ie8 : true;
+
+$logo                   : 'logo-white';
+
+// Color Settings
+
+$blue-darkest           : #0a3055;
+$blue-dark              : #005780;
+$blue                   : #007CB2;
+$blue-muted             : #127FA8;
+$blue-light             : #8DC1D5;
+$blue-lighter           : #d5ebf3;
+$burgundy               : #912d4a;
+$green                  : #298732;
+$green-bright           : #42a920;
+$orange                 : #CB4D0B;
+$gray-darkest           : #3b444c;
+$gray-dark              : #4F5A65;
+$gray-alt               : #505a65;
+$gray                   : #607883;
+$gray-light             : #7F868C;
+$gray-lighter           : #D6DDE2;
+$gray-lightest          : #F7F8F9;
+//$navy                   : #182957;
+$purple                 : #535BA3;
+$red                    : #BE1512;
+$red-dark               : #78070e;
+$yellow                 : #f5b333;
+
+$nav-bg                 : $blue-dark;
+$header-bg              : $blue;
+$footer-bg              : $gray;
+//** Background color for `<body>`.
+$body-bg                : $footer-bg;
+$content-bg             : #FFF;
+
+$valid                  : $green;
+$error                  : $red;
+$warning                : $red-dark;
+$information            : $blue-dark;
+
+//** Global text color on `<body>`.
+$text-color             : #4F5A65;
+//** Text muted color
+$text-muted             : $gray;
+
+$link-hover             : $orange;
+$link-color             : $blue;
+$link-color-alt         : #26C4FF;

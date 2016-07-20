@@ -1,0 +1,35 @@
+{% extends &quot;templates-page-2col&quot; %}
+{% block hero %}
+    {% if emergency %}
+        {% include &quot;molecules-alert&quot; with emergency %}
+    {% endif %}
+    {% if hero %}
+        {% include &quot;molecules-block-hero&quot; %}
+    {% endif %}
+
+    &lt;div class=&quot;g g-3up&quot;&gt;
+        {% for tout in touts %}
+            &lt;div class=&quot;gi&quot;&gt;
+                {% include &quot;molecules-block-inset&quot; %}
+            &lt;/div&gt;
+        {% endfor %}
+    &lt;/div&gt;&lt;!--end 3up--&gt;
+
+    &lt;hr/&gt;
+{% endblock %}
+
+{% block main %}
+    &lt;section class=&quot;section latest-posts&quot;&gt;
+        &lt;h2 class=&quot;section-title&quot;&gt;Latest Posts&lt;/h2&gt;
+        &lt;ul class=&quot;post-list&quot;&gt;
+            {% for post in latest_posts %}
+                &lt;li&gt;{% include &quot;molecules-media-block&quot; %}&lt;/li&gt;
+            {% endfor %}
+        &lt;/ul&gt;
+        &lt;a href=&quot;#&quot; class=&quot;text-btn&quot;&gt;View more posts&lt;/a&gt;
+    &lt;/section&gt;
+{% endblock %}
+
+{% block sidebar %}
+    {% include &quot;organisms-recent-tweets&quot; %}
+{% endblock %}

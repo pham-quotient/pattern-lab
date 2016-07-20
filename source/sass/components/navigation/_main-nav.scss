@@ -1,0 +1,168 @@
+
+
+
+.l-navigation,
+.l-region--header {
+ .block--superfish {
+    position: absolute;
+    width: 96%;
+    top: 17%;
+    right: 2%;
+
+    .block__content {
+     position: relative;
+    }
+ }
+
+
+
+ .sf-accordion-toggle {
+  position: absolute;
+  top: 0;
+  right: 1%;
+  a {
+    @include button;
+    @include button-style($blue,$gray-lighter, $gray-lighter);
+   font-size: em(22px);
+   @include font-icon("\f0c9", $blue, 20px, 0, 2px, 2px, true);
+      line-height: 1;
+      transition: .2s;
+      width: 1.625em;
+      height: 1.7em;
+   span {
+    @extend %hide-text;
+   }
+       &:hover,
+       &.sf-expanded {
+        @include button-style(white,$orange, $orange);
+        &:after {
+         content: '\f00d';
+         color: white;
+        }
+      }
+  }
+ }
+  .sf-menu.sf-style-none {
+    line-height: $baseLineHeight;
+    margin: 0;
+    padding: 0;
+    background: $orange;
+    &.sf-accordion.sf-expanded {
+      top: 34px !important;
+      width: 99%;
+    }
+    &.sf-navbar {
+      width: 100%;
+    }
+    ul {
+      padding-left: 0;
+    }
+    li {
+      a {
+        font-size: em($font-size-base);
+        font-family: $font;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: 400;
+        @include link-colors(white, white, white, white, white);
+        padding: em($space-and-half/3) em($space/2);
+      }
+      ul {
+        background: $orange;
+        padding-left: em($space);
+      }
+
+    }
+    //top-level
+    > li {
+      > a {
+        padding-left: em(20px);
+      }
+      &.sf-depth-1.menuparent {
+        > a {
+          @include font-icon("\f067", white, 14px, 20px, 12px, 5px);
+        }
+        &.sf-expanded {
+          background: $orange;
+          > a:before {
+            content: "\f068";
+          }
+        }
+      }
+    }
+  } //end mobile .sf-menu
+
+  @include breakpoint($desk) {
+   background: $blue;
+    .block--superfish {
+      position: relative;
+      width: 100%;
+      top: auto;
+      right: auto;
+
+      .block__content {
+        @include clearfix;
+        float: right;
+      }
+    } // end block--superfish
+    .sf-menu.sf-style-none {
+      background: $blue;
+      float: left;
+      li {
+        a {
+          @include link-colors(white, $link-hover, $link-hover, white, white);
+        }
+        ul {
+          background: $blue;
+        }
+      }
+      a > .sf-sub-indicator, span.nolink > .sf-sub-indicator {
+        top: .8em;
+        right: .5em;
+      }
+      >li {
+        > a {
+          display: block;
+          border: none;
+        }
+        &.active-trail {
+          > a {
+            color: $link-hover;
+          }
+        }
+        &.sf-depth-1.menuparent {
+          > a {
+            display: block;
+            padding: em($space-and-half/3) em($space/2);
+            padding-right: em($space);
+            &:before{
+              content: '';
+            }
+          }
+          &.sf-expanded {
+            background: $blue;
+            > a:before {
+             content: '';
+            }
+          }
+        } // end sf-depth-1.menuparent
+
+        > ul {
+          padding-left: 0;
+          @include box-shadow(rgba(black, .2) 0 5px 5px);
+          border-bottom: 1px solid white;
+          min-width: 3em;
+        }
+        &.sfHover {
+          > ul {
+            top: em($line-height-base+(($space-and-half/3)*2));
+            left: 1px;
+          }
+        }
+      } // end top-level li
+
+    } //end sf-menu.sf-style-none
+
+  } // end breakpoint($desk)
+} //end l-navigation
+
